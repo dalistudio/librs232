@@ -396,7 +396,8 @@ rs232_open(struct rs232_port_t *p)
 	if (wname == NULL)
 		return RS232_ERR_UNKNOWN;
 
-	wx->fd = CreateFile(wname, GENERIC_READ | GENERIC_WRITE,
+    // BUG修复，在mingw32编译是，需要CreateFileW()才能正常打开串口，否则会用CreateFileA打开串口失败。
+	wx->fd = CreateFileW(wname, GENERIC_READ | GENERIC_WRITE,
 			    FILE_SHARE_READ | FILE_SHARE_WRITE,
 			    NULL, OPEN_EXISTING, 0, NULL);
 
