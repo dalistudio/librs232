@@ -32,3 +32,10 @@ missing
 Makefile
 libtool
 *.pc
+*.so
+*log.txt
+test
+*.dll
+test.exe
+lua.exe
+luac.exe

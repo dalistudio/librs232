@@ -53,7 +53,7 @@ unsigned int rs232_simple_test(void)
 		return 1;
 
 #ifdef WIN32
-	rs232_set_device(p, "COM1");
+	rs232_set_device(p, "COM3");
 #else
 	rs232_set_device(p, "/dev/ttyUSB0");
 #endif
